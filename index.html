@@ -35,6 +35,27 @@
       background-image: url(./images/ocean.jpg);
       background-repeat: repeat;
       background-attachment: fixed;
+      animation: ocean-0 3s linear infinite 200ms;
+    }
+    @keyframes ocean-0 {
+      to {
+        background-position: 0px -599px;
+      }
+    }
+    @keyframes ocean-1 {
+      to {
+        background-position: 599px -599px;
+      }
+    }
+    @keyframes ocean-2 {
+      to {
+        background-position: 599px 0;
+      }
+    }
+    @keyframes ocean-3 {
+      to {
+        background-position: -599px 0;
+      }
     }
   </style>
   <link rel="prefetch" href="./images/ocean.jpg">
@@ -53,7 +74,7 @@
   <div class="container">
     <div class="skull"></div>
     <div class="text">
-      <a href="https://quila.dev" class="text__quila">quila.dev</a>
+      <a href="/" class="text__quila">quila.dev</a>
       <a class="text__email" target="_blank" href="mailto:contato@quila.dev">contato@quila.dev</a>
     </div>
   </div>
