@@ -22,7 +22,8 @@
     *, *:before, *:after {
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
     }
     html, body {
       width: 100%;
@@ -38,11 +39,22 @@
       background-image: url(./images/ocean.jpg);
       background-repeat: repeat;
       background-attachment: fixed;
-      animation: ocean-0 3s linear infinite 200ms;
+      -webkit-animation: ocean-0 3s linear infinite 200ms;
+              animation: ocean-0 3s linear infinite 200ms;
+    }
+    @-webkit-keyframes ocean-0 {
+      to {
+        background-position: 0px -599px;
+      }
     }
     @keyframes ocean-0 {
       to {
         background-position: 0px -599px;
+      }
+    }
+    @-webkit-keyframes ocean-1 {
+      to {
+        background-position: 599px -599px;
       }
     }
     @keyframes ocean-1 {
@@ -50,9 +62,19 @@
         background-position: 599px -599px;
       }
     }
+    @-webkit-keyframes ocean-2 {
+      to {
+        background-position: 599px 0;
+      }
+    }
     @keyframes ocean-2 {
       to {
         background-position: 599px 0;
+      }
+    }
+    @-webkit-keyframes ocean-3 {
+      to {
+        background-position: -599px 0;
       }
     }
     @keyframes ocean-3 {
@@ -75,10 +97,12 @@
 </head>
 <body>
   <div class="container">
-    <div class="skull"></div>
+    <button class="skull">
+      <span class="sr-only">Botão com uma imagem de caveira de fundo. Clicar fas trocar a caveira.</span>
+    </button>
     <div class="text">
-      <a href="/" class="text__quila">quila.dev</a>
-      <a class="text__email" target="_blank" href="mailto:contato@quila.dev">contato@quila.dev</a>
+      <h1 class="text__quila">quila.dev</h1>
+      <a class="text__email" target="_blank" title="contato@quila.dev" href="mailto:contato@quila.dev">contato@quila.dev</a>
     </div>
   </div>
   <script src="scripts.js"></script>

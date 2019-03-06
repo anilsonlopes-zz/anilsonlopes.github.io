@@ -1,8 +1,17 @@
 .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-flow: column;
-  justify-content: center; 
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center; 
+  -webkit-box-align: center; 
+      -ms-flex-align: center; 
+          align-items: center;
   margin: 0 auto;
   width: 600px;
   max-width: 100%;
@@ -18,9 +27,16 @@
   background-image: url(./images/skull_0.png);
   background-repeat: no-repeat;
   background-position: center;
+  -webkit-transition: 400ms cubic-bezier(0.74, 0.32, 0.41, 0.88) all;
+  -o-transition: 400ms cubic-bezier(0.74, 0.32, 0.41, 0.88) all;
   transition: 400ms cubic-bezier(0.74, 0.32, 0.41, 0.88) all;
   position: relative;
   overflow: hidden;
+  border: none;
+  font-size: 0;
+}
+.skull:focus {
+  outline: none;
 }
 .skull:before {
   content: '';
@@ -33,9 +49,15 @@
   border-top: 50px solid rgba(255, 255, 255, 0.2);
 }
 .text {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 100%;
   padding-bottom: 1rem;
   border-bottom: solid 0.2rem rgba(255, 255, 255, 0.4);
