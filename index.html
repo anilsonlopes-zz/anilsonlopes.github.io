@@ -132,6 +132,7 @@
   <link rel="prefetch" href="./images/skull_7.png">
   <link rel="prefetch" href="./images/skull_9.png">
   <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="./manifest.json">
 </head>
 <body>
   <div class="container">
@@ -143,6 +144,16 @@
       <a class="text__email" target="_blank" title="contato@quila.dev" href="mailto:contato@quila.dev">contato@quila.dev</a>
     </div>
   </div>
+  <script>
+    if ("serviceWorker" in navigator) {
+      if (!navigator.serviceWorker.controller) {
+        navigator.serviceWorker.register("pwabuilder-sw.js", {
+          scope: "./"
+        });
+      }
+    }
+  </script>
+  <script src="sw.js"></script>
   <script src="scripts.js"></script>
 </body>
 </html>
