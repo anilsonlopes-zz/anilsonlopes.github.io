@@ -1,57 +1,39 @@
-// This is the "Offline page" service worker
+importScripts('/_nuxt/workbox.4c4f5ca6.js')
 
-const CACHE = "quila-dev";
+workbox.precaching.precacheAndRoute([
+  {
+    "url": "/_nuxt/3fd67a48b952062ecd2e.js",
+    "revision": "71f46492a0402a917ded0d4aa7489f1c"
+  },
+  {
+    "url": "/_nuxt/8e8104bcfb0da6f9c8fa.js",
+    "revision": "cdbde3bb6ac47d6c3f2d4d6304885a0a"
+  },
+  {
+    "url": "/_nuxt/9cbf16b186e069ab75cc.js",
+    "revision": "bbe59ff001cea077304482b799628895"
+  },
+  {
+    "url": "/_nuxt/cade1b0d55a6f5ceee51.js",
+    "revision": "37d5ee86cb520a61d6fced7bf51207f8"
+  },
+  {
+    "url": "/_nuxt/f3d2cadefc5e9c24ed6f.js",
+    "revision": "6052727ed03ac119a007fa8014b40ab7"
+  },
+  {
+    "url": "/_nuxt/fcbacfda4c647be72421.js",
+    "revision": "e1caada8bd3d3c1620949cc871e01c0e"
+  }
+], {
+  "cacheId": "quila.dev",
+  "directoryIndex": "/",
+  "cleanUrls": false
+})
 
-// TODO: replace the following with the correct offline fallback page i.e.: const offlineFallbackPage = "offline.html";
-const offlineFallbackPage = "index.html";
+workbox.clientsClaim()
+workbox.skipWaiting()
 
-// Install stage sets up the offline page in the cache and opens a new cache
-self.addEventListener("install", function (event) {
-  console.log("[PWA Builder] Install Event processing");
+workbox.routing.registerRoute(new RegExp('/_nuxt/.*'), workbox.strategies.cacheFirst({}), 'GET')
 
-  event.waitUntil(
-    caches.open(CACHE).then(function (cache) {
-      console.log("[PWA Builder] Cached offline page during install");
-
-      if (offlineFallbackPage === "index.html") {
-        return cache.add(new Response("TODO: Update the value of the offlineFallbackPage constant in the serviceworker."));
-      }
-
-      return cache.add(offlineFallbackPage);
-    })
-  );
-});
-
-// If any fetch fails, it will show the offline page.
-self.addEventListener("fetch", function (event) {
-  if (event.request.method !== "GET") return;
-
-  event.respondWith(
-    fetch(event.request).catch(function (error) {
-      // The following validates that the request was for a navigation to a new document
-      if (
-        event.request.destination !== "document" ||
-        event.request.mode !== "navigate"
-      ) {
-        return;
-      }
-
-      console.error("[PWA Builder] Network request Failed. Serving offline page " + error);
-      return caches.open(CACHE).then(function (cache) {
-        return cache.match(offlineFallbackPage);
-      });
-    })
-  );
-});
-
-// This is an event that can be fired from your page to tell the SW to update the offline page
-self.addEventListener("refreshOffline", function () {
-  const offlinePageRequest = new Request(offlineFallbackPage);
-
-  return fetch(offlineFallbackPage).then(function (response) {
-    return caches.open(CACHE).then(function (cache) {
-      console.log("[PWA Builder] Offline page updated from refreshOffline event: " + response.url);
-      return cache.put(offlinePageRequest, response);
-    });
-  });
-});
+workbox.routing.registerRoute(new RegExp('/.*'), workbox.strategies.networkFirst({}), 'GET')
