@@ -37,18 +37,23 @@ html {
 }
 
 .domain {
-  font-size: 30vw;
+  font-size: 13vw;
 }
 </style>
 
 <script>
 export default {
   data: () => ({
-    nameBase: 'mad !',
+    nameBase: 'mad bmx',
     name: [],
     currentLetter: 0,
-    location: 'Maceió, AL - Brasil'
+    location: 'Maceió - AL - Brasil'
   }),
+  computed: {
+    randomImage() {
+      return '0' + parseInt(Math.random() * 4)
+    }
+  },
   mounted() {
     window.setTimeout(() => {
       this.$nextTick(() => {
@@ -58,11 +63,16 @@ export default {
   },
   methods: {
     writeName() {
+      if (window.document.hidden) {
+        return window.setTimeout(() => {
+          this.writeName()
+        }, 500)
+      }
       this.name.push(this.nameBase.split('')[this.currentLetter++])
       if (this.currentLetter < this.nameBase.length) {
         window.setTimeout(() => {
           this.writeName()
-        }, 800)
+        }, 100)
       }
     }
   }

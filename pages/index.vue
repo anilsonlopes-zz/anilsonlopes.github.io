@@ -1,10 +1,7 @@
 <template>
   <div>
     <div class="flex flex-col items-center justify-center h-screen">
-      <h1
-        class="domain highlight text-center"
-        :style="{ 'background-image': `url(img/${randomImage}.jpg)` }"
-      >
+      <h1 class="domain highlight text-center">
         {{ name.join('') }}
       </h1>
       <p class="highlight uppercase">
@@ -22,11 +19,11 @@ html {
 .flex {
   background-image: linear-gradient(
     to left bottom,
-    #535353,
-    #979797,
-    #555353,
-    #474747,
-    #000000
+    #cccccc,
+    #fbfbfb,
+    #f6f6f6,
+    #f2f2f2,
+    #eeeeee
   );
 }
 
@@ -36,19 +33,20 @@ html {
   background-attachment: local;
   background-size: 100% auto;
   -webkit-text-fill-color: transparent;
+  background-image: url(~static/img/02.jpg);
 }
 
 .domain {
-  font-size: 30vw;
+  font-size: 13vw;
 }
 </style>
 
 <script>
 export default {
   data: () => ({
-    nameBase: 'quila',
     name: [],
     currentLetter: 0,
+    nameBase: 'quila.dev',
     location: 'web developer'
   }),
   computed: {
@@ -61,10 +59,15 @@ export default {
       this.$nextTick(() => {
         this.writeName()
       })
-    }, 1000)
+    }, 500)
   },
   methods: {
     writeName() {
+      if (window.document.hidden) {
+        return window.setTimeout(() => {
+          this.writeName()
+        }, 100)
+      }
       this.name.push(this.nameBase.split('')[this.currentLetter++])
       if (this.currentLetter < this.nameBase.length) {
         window.setTimeout(() => {
