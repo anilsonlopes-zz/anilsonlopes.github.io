@@ -1,80 +1,57 @@
 <template>
-  <div>
-    <div class="flex flex-col items-center justify-center h-screen">
-      <h1 class="domain highlight text-center">
-        {{ name.join('') }}
-      </h1>
-      <p class="highlight uppercase">
-        {{ location }}
-      </p>
+  <div class="w-full flex justify-center p-4">
+    <div class="max-w-4xl flex justify-between">
+      <div class="flex flex-col justify-center">
+        <div
+          class="bg-cover rounded-full"
+          :style="{
+            backgroundImage:
+              'url(https://abrilsuperinteressante.files.wordpress.com/2016/09/super_imgmr_robot.gif)',
+            width: '220px',
+            height: '220px'
+          }"
+        />
+        <nav class="flex justify-center mt-5">
+          <a
+            class="social__link"
+            href="https://www.linkedin.com/in/anilson-lopes-07a36612a"
+          >
+            <img src="./social/linkedin.svg" alt="Linkedin">
+          </a>
+          <a class="social__link" href="https://www.instagram.com/quilamcz">
+            [instagram]
+          </a>
+          <a class="social__link" href="https://github.com/anilsonlopes">
+            [github]
+          </a>
+        </nav>
+      </div>
+      <div class="md:ml-10 text">
+        <p class="text-2xl">
+          Eu sou um desenvolvedor front-end que atualmente está criando
+          interfaces digitais na
+          <a href="https://doity.com.br" target="_blank">Doity</a>. Sou
+          apaixonado por desenvolvimento com acesso performático e gosto de
+          trabalhar em equipes que obscurecem as linhas entre eles. Eu acredito
+          na construção de produtos auto-sustentáveis, escaláveis e acessíveis.
+        </p>
+        <p>
+          In my free time, I’m into virtual reality, archery, and baking.
+        </p>
+        <a href="mailto:nissobmx@gmail.com">
+          EMAIL ME
+        </a>
+      </div>
     </div>
   </div>
 </template>
 
-<style lang="scss">
-html {
-  scroll-behavior: smooth;
+<style lang="postcss" scoped>
+.social__link {
+  @apply mx-2;
 }
 
-.flex {
-  background-image: linear-gradient(
-    to left bottom,
-    #cccccc,
-    #fbfbfb,
-    #f6f6f6,
-    #f2f2f2,
-    #eeeeee
-  );
-}
-
-.highlight {
-  font-family: 'Fredoka One', cursive;
-  background-clip: text;
-  background-attachment: local;
-  background-size: 100% auto;
-  -webkit-text-fill-color: transparent;
-  background-image: url(~static/img/02.jpg);
-}
-
-.domain {
-  font-size: 13vw;
+.text {
+  font-family: 'Crimson Text', serif;
 }
 </style>
-
-<script>
-export default {
-  data: () => ({
-    name: [],
-    currentLetter: 0,
-    nameBase: 'quila.dev',
-    location: 'web developer'
-  }),
-  computed: {
-    randomImage() {
-      return '0' + parseInt(Math.random() * 4)
-    }
-  },
-  mounted() {
-    window.setTimeout(() => {
-      this.$nextTick(() => {
-        this.writeName()
-      })
-    }, 500)
-  },
-  methods: {
-    writeName() {
-      if (window.document.hidden) {
-        return window.setTimeout(() => {
-          this.writeName()
-        }, 100)
-      }
-      this.name.push(this.nameBase.split('')[this.currentLetter++])
-      if (this.currentLetter < this.nameBase.length) {
-        window.setTimeout(() => {
-          this.writeName()
-        }, 500)
-      }
-    }
-  }
-}
-</script>

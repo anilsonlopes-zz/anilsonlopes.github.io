@@ -15,11 +15,37 @@ export default {
         hid: 'description',
         name: 'description',
         content: process.env.npm_package_description || ''
+      },
+      {
+        hid: 'og:image',
+        property: 'og:image',
+        content: 'https://quila.dev/images/skull_0.png'
+      },
+      {
+        hid: 'og:description',
+        property: 'og:description',
+        content: 'Anilson Lopes é um desenvolvedor enraizado em Maceió.'
+      },
+      {
+        hid: 'og:title',
+        property: 'og:title',
+        content: 'Anilson Lopes'
+      },
+      {
+        hid: 'og:type',
+        property: 'og:type',
+        content: 'website'
+      },
+      {
+        hid: 'og:url',
+        property: 'og:url',
+        content: 'https://www.quila.dev'
       }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Fredoka+One&display=swap' }
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Palanquin+Dark&display=swap' },
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Crimson+Text&display=swap' }
     ]
   },
   /*
@@ -48,6 +74,13 @@ export default {
    ** See https://axios.nuxtjs.org/options
    */
   axios: {},
+  sitemap: {
+    path: '/sitemap.xml',
+    hostname: 'https://www.quila.dev',
+    cacheTime: 1000 * 60 * 15,
+    gzip: true,
+    generate: true
+  },
   /*
    ** Build configuration
    */
