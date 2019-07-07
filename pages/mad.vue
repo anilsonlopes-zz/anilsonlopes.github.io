@@ -33,7 +33,7 @@ html {
   background-attachment: local;
   background-size: 100% auto;
   -webkit-text-fill-color: transparent;
-  background-image: url(~static/img/02.jpg);
+  background-image: url(~assets/img/02.jpg);
 }
 
 .domain {

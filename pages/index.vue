@@ -1,9 +1,9 @@
 <template>
-  <div class="w-full flex justify-center p-4">
-    <div class="max-w-4xl flex justify-between">
+  <div class="w-full flex justify-center items-center p-4">
+    <div class="max-w-4xl flex flex-col md:flex-row items-center justify-between mt-10">
       <div class="flex flex-col justify-center">
         <div
-          class="bg-cover rounded-full"
+          class="bg-cover rounded-full shadow-lg"
           :style="{
             backgroundImage:
               'url(https://abrilsuperinteressante.files.wordpress.com/2016/09/super_imgmr_robot.gif)',
@@ -15,31 +15,50 @@
           <a
             class="social__link"
             href="https://www.linkedin.com/in/anilson-lopes-07a36612a"
+            target="_blank"
           >
-            <img src="./social/linkedin.svg" alt="Linkedin">
+            <img src="~/assets/img/social/linkedin.png" alt="Linkedin" />
           </a>
-          <a class="social__link" href="https://www.instagram.com/quilamcz">
-            [instagram]
+          <a
+            class="social__link"
+            href="https://www.instagram.com/quilamcz"
+            target="_blank"
+          >
+            <img src="~/assets/img/social/instagram.png" alt="Instagram" />
           </a>
-          <a class="social__link" href="https://github.com/anilsonlopes">
-            [github]
+          <a
+            class="social__link"
+            href="https://github.com/anilsonlopes"
+            target="_blank"
+          >
+            <img src="~/assets/img/social/github.png" alt="Github" />
+          </a>
+          <a
+            class="social__link"
+            href="https://soundcloud.com/quilamcz"
+            target="_blank"
+          >
+            <img src="~/assets/img/social/soundcloud.png" alt="SoundCloud" />
           </a>
         </nav>
       </div>
-      <div class="md:ml-10 text">
+      <div class="md:ml-10 mt-10 md:mt-0 text">
         <p class="text-2xl">
-          Eu sou um desenvolvedor front-end que atualmente está criando
-          interfaces digitais na
-          <a href="https://doity.com.br" target="_blank">Doity</a>. Sou
-          apaixonado por desenvolvimento com acesso performático e gosto de
-          trabalhar em equipes que obscurecem as linhas entre eles. Eu acredito
-          na construção de produtos auto-sustentáveis, escaláveis e acessíveis.
+          Eu sou Anilson Lopes, um desenvolvedor front-end que atualmente está criando interfaces 
+          digitais na <a href="https://doity.com.br" target="_blank">Doity</a>. 
+          Sou apaixonado por desenvolvimento performático e gosto de trabalhar em 
+          equipes que eliminam as barreiras entre eles. Eu acredito na construção de 
+          produtos auto-sustentáveis, escaláveis e acessíveis.
         </p>
-        <p>
-          In my free time, I’m into virtual reality, archery, and baking.
+        <p class="text-xl mt-5 mb-4">
+          No meu tempo livre, me envolvo com produção musical, tento reinventar coisas e pratico bmx street/park.
         </p>
-        <a href="mailto:nissobmx@gmail.com">
-          EMAIL ME
+        <a
+          class="text-sm font-bold hover:text-blue-600"
+          href="mailto:nissobmx@gmail.com"
+          target="_blank"
+        >
+          MANDE-ME UM EMAIL
         </a>
       </div>
     </div>
@@ -48,7 +67,12 @@
 
 <style lang="postcss" scoped>
 .social__link {
-  @apply mx-2;
+  @apply mx-2 opacity-50;
+  transition: 100ms all;
+}
+
+.social__link:hover {
+  @apply opacity-100;
 }
 
 .text {
