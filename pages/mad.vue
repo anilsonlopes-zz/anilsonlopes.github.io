@@ -28,7 +28,7 @@ html {
 }
 
 .highlight {
-  font-family: 'Fredoka One', cursive;
+  font-family: 'Palanquin Dark', cursive;
   background-clip: text;
   background-attachment: local;
   background-size: 100% auto;
