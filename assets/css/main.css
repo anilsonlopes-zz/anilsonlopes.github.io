@@ -1,9 +1,15 @@
 :root {
   --theme-bg: white;
   --theme-text: black;
+
+  --theme-link: #00354e;
+  --theme-link-hover: #3cbcf7;
 }
 
 body.dark-mode {
   --theme-bg: black;
-  --theme-text: white;
+  --theme-text: rgb(152, 152, 167);
+
+  --theme-link: #81cbee;
+  --theme-link-hover: #00354e;
 }

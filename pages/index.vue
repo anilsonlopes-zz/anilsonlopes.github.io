@@ -136,12 +136,13 @@
 }
 
 .network__link {
-  @apply border-b border-blue-300;
-  color: var(--theme-text);
+  @apply border-b;
+  color: var(--theme-text, black);
+  border-color: var(--theme-link-hover, #81cbee);
 }
 
 .network__link:hover {
-  @apply bg-blue-300;
+  background-color: var(--theme-link-hover, #00354e);
 }
 </style>
 
