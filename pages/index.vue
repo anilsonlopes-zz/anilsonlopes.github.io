@@ -42,14 +42,14 @@
           </div>
           <div class="lg:pl-10 pt-5 lg:pt-0">
             <p class="text-2xl">
-              Eu sou Anilson Lopes, <a :href="network.linkedin" class="network__link" target="_blank" title="Perfil no Linkedin">desenvolvedor web</a> que atualmente está criando interfaces 
-              digitais na <a :href="network.doity" class="network__link" target="_blank" title="Site da Doity, plataforma de eventos">Doity</a>. 
-              <a :href="network.instagram" class="network__link" target="_blank" title="Perfil no Instagram">Vivo na sombra</a> do desenvolvimento performático e gosto de colaborar com 
-              equipes que eliminam as fronteiras entre eles. Eu acredito na <a :href="network.github" class="network__link" target="_blank" title="Perfil no Github">construção</a> de 
+              Eu sou Anilson Lopes, <a :href="network.linkedin" rel="noreferrer" class="network__link" target="_blank" title="Perfil no Linkedin">desenvolvedor web</a> que atualmente está criando interfaces 
+              digitais na <a :href="network.doity" rel="noreferrer" class="network__link" target="_blank" title="Site da Doity, plataforma de eventos">Doity</a>. 
+              <a :href="network.instagram" rel="noreferrer" class="network__link" target="_blank" title="Perfil no Instagram">Vivo na sombra</a> do desenvolvimento performático e gosto de colaborar com 
+              equipes que eliminam as fronteiras entre eles. Eu acredito na <a :href="network.github" rel="noreferrer" class="network__link" target="_blank" title="Perfil no Github">construção</a> de 
               produtos auto-sustentáveis, escaláveis e acessíveis.
             </p>
             <p class="text-xl pb-5 pb-4">
-              Na eminência de tempo livre me envolvo com <a :href="network.soundcloud" class="network__link" target="_blank" title="Perfil no Soundcloud">produção musical</a>, tento reinventar coisas e pratico bmx street-park.
+              Na eminência de tempo livre me envolvo com <a :href="network.soundcloud" rel="noreferrer" class="network__link" target="_blank" title="Perfil no Soundcloud">produção musical</a>, tento reinventar coisas e pratico bmx street-park.
             </p>
             <a
               class="text-sm font-bold hover:text-blue-600"
