@@ -1,0 +1,9 @@
+:root {
+  --theme-bg: white;
+  --theme-text: black;
+}
+
+body.dark-mode {
+  --theme-bg: black;
+  --theme-text: white;
+}
