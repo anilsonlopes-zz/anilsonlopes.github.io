@@ -145,6 +145,10 @@ body:not(.dark-mode) .toggle-dark-mode:hover {
   @apply opacity-100;
 }
 
+body.dark-mode .social__link {
+  filter: invert(100%);
+}
+
 .network__link {
   @apply border-b;
   color: var(--theme-text, black);
