@@ -1,21 +1,13 @@
 <template>
   <div>
     <div class="wrapper">
-      <button class="toggle-dark-mode" @click="darkMode = !darkMode">
+      <button class="toggle-dark-mode" :title="darkMode ? 'Desativar modo escuro' : 'Ativar modo escuro'" @click="darkMode = !darkMode">
         <i v-if="darkMode" class="sun inline-block"></i>
         <i v-else class="moon inline-block"></i>
       </button>
-      <div class="max-w-4xl flex flex-col lg:flex-row lg:justify-between">
+      <div class="pt-20 max-w-4xl flex flex-col lg:flex-row lg:justify-between">
         <div class="flex flex-col justify-center">
-          <div
-            class="bg-cover rounded shadow-lg"
-            :style="{
-              backgroundImage:
-                'url(https://abrilsuperinteressante.files.wordpress.com/2016/09/super_imgmr_robot.gif)',
-              width: '220px',
-              height: '220px'
-            }"
-          />
+          <div class="avatar" />
           <nav class="social">
             <a
               class="social__link"
@@ -79,12 +71,29 @@
   color: var(--theme-text, #f1f3f2);
 }
 
+.avatar {
+  @apply bg-cover rounded shadow-lg w-64 h-64 bg-cover;
+}
+
+body:not(.dark-mode) .avatar {
+  background-image: url(~assets/img/mr-robot.jpg);
+}
+
+body.dark-mode .avatar {
+  background-image: url(~assets/img/mr-robot.gif);
+}
+
 .toggle-dark-mode:focus {
-  @apply outline-none;
+  @apply outline-none ;
+}
+
+body:not(.dark-mode) .toggle-dark-mode:hover {
+  background-color: var(--theme-link-hover, #00354e);
 }
 
 .toggle-dark-mode {
   @apply p-2;
+  transition: 200ms all;
 }
 
 .moon {
@@ -96,7 +105,8 @@
 }
 
 .sun {
-  background-color: var(--theme-text, red);
+  background-color: yellow;
+  opacity: 0.7;
   width: 80px;
   height: 80px;
   position: relative;
@@ -195,7 +205,11 @@ export default {
   watch: {
     darkMode(dark) {
       document.body.classList[dark ? 'add' : 'remove']('dark-mode')
+      window.localStorage.setItem('dark-mode', dark)
     }
+  },
+  mounted() {
+    this.darkMode = JSON.parse(window.localStorage.getItem('dark-mode')) || false
   }
 }
 </script>
