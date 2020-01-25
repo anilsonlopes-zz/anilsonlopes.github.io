@@ -14,7 +14,8 @@ export default {
       {
         hid: 'description',
         name: 'description',
-        content: 'Anilson Lopes, desenvolvedor web. JavaScript, CSS, HTML, VueJS, NuxtJS'
+        content:
+          'Anilson Lopes, desenvolvedor web. JavaScript, CSS, HTML, VueJS, NuxtJS'
       },
       {
         hid: 'og:image',
@@ -24,7 +25,8 @@ export default {
       {
         hid: 'og:description',
         property: 'og:description',
-        content: 'Anilson Lopes, desenvolvedor web. JavaScript, CSS, HTML, VueJS, NuxtJS'
+        content:
+          'Anilson Lopes, desenvolvedor web. JavaScript, CSS, HTML, VueJS, NuxtJS'
       },
       {
         hid: 'og:title',
@@ -42,18 +44,16 @@ export default {
         content: 'https://www.quila.dev'
       }
     ],
-    link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-    ]
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
   },
   /*
    ** Customize the progress-bar color
    */
-  loading: { color: '#fff' },
+  loading: { color: '#222' },
   /*
    ** Global CSS
    */
-  css: ['~/assets/css/tailwind.css'],
+  css: ['~/assets/css/tailwind.css', '~/assets/css/main.css'],
   /*
    ** Plugins to load before mounting the App
    */
