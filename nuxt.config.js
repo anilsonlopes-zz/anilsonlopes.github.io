@@ -14,7 +14,7 @@ export default {
       {
         hid: 'description',
         name: 'description',
-        content: process.env.npm_package_description || ''
+        content: 'Anilson Lopes, desenvolvedor web. JavaScript, CSS, HTML, VueJS, NuxtJS'
       },
       {
         hid: 'og:image',
@@ -24,12 +24,12 @@ export default {
       {
         hid: 'og:description',
         property: 'og:description',
-        content: 'Anilson Lopes é um desenvolvedor enraizado em Maceió.'
+        content: 'Anilson Lopes, desenvolvedor web. JavaScript, CSS, HTML, VueJS, NuxtJS'
       },
       {
         hid: 'og:title',
         property: 'og:title',
-        content: 'Anilson Lopes'
+        content: 'Anilson Lopes, desenvolvedor web'
       },
       {
         hid: 'og:type',
@@ -43,17 +43,7 @@ export default {
       }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      {
-        rel: 'stylesheet',
-        href:
-          'https://fonts.googleapis.com/css?family=Palanquin+Dark&display=swap'
-      },
-      {
-        rel: 'stylesheet',
-        href:
-          'https://fonts.googleapis.com/css?family=Crimson+Text&display=swap'
-      }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
   /*
