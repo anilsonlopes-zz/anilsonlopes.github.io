@@ -1,62 +1,64 @@
 <template>
   <div>
     <div class="wrapper">
-      <button class="toggle-dark-mode" :title="darkMode ? 'Desativar modo escuro' : 'Ativar modo escuro'" @click="darkMode = !darkMode">
-        <i v-if="darkMode" class="sun inline-block"></i>
-        <i v-else class="moon inline-block"></i>
-      </button>
-      <div class="pt-20 max-w-4xl flex flex-col lg:flex-row lg:justify-between">
-        <div class="flex flex-col justify-center">
-          <div class="avatar" />
-          <nav class="social">
+      <div class="max-w-xl lg:max-w-4xl mx-auto">
+        <button class="toggle-dark-mode" :title="darkMode ? 'Desativar modo escuro' : 'Ativar modo escuro'" @click="darkMode = !darkMode">
+          <i v-if="darkMode" class="sun inline-block"></i>
+          <i v-else class="moon inline-block"></i>
+        </button>
+        <div class="pt-10 lg:pt-20 flex flex-col lg:flex-row lg:justify-between">
+          <div class="flex flex-col justify-center">
+            <div class="avatar" />
+            <nav class="social">
+              <a
+                class="social__link"
+                :href="network.linkedin"
+                target="_blank"
+              >
+                <img src="~/assets/img/social/linkedin.png" alt="Linkedin" />
+              </a>
+              <a
+                class="social__link"
+                :href="network.instagram"
+                target="_blank"
+              >
+                <img src="~/assets/img/social/instagram.png" alt="Instagram" />
+              </a>
+              <a
+                class="social__link"
+                :href="network.github"
+                target="_blank"
+              >
+                <img src="~/assets/img/social/github.png" alt="Github" />
+              </a>
+              <a
+                class="social__link"
+                :href="network.soundcloud"
+                target="_blank"
+              >
+                <img src="~/assets/img/social/soundcloud.png" alt="SoundCloud" />
+              </a>
+            </nav>
+          </div>
+          <div class="lg:pl-10 pt-5 lg:pt-0">
+            <p class="text-2xl">
+              Eu sou Anilson Lopes, <a :href="network.linkedin" class="network__link" target="_blank" title="Perfil no Linkedin">desenvolvedor web</a> que atualmente está criando interfaces 
+              digitais na <a :href="network.doity" class="network__link" target="_blank" title="Site da Doity, plataforma de eventos">Doity</a>. 
+              <a :href="network.instagram" class="network__link" target="_blank" title="Perfil no Instagram">Vivo na sombra</a> do desenvolvimento performático e gosto de colaborar com 
+              equipes que eliminam as fronteiras entre eles. Eu acredito na <a :href="network.github" class="network__link" target="_blank" title="Perfil no Github">construção</a> de 
+              produtos auto-sustentáveis, escaláveis e acessíveis.
+            </p>
+            <p class="text-xl pb-5 pb-4">
+              Na eminência de tempo livre me envolvo com <a :href="network.soundcloud" class="network__link" target="_blank" title="Perfil no Soundcloud">produção musical</a>, tento reinventar coisas e pratico bmx street-park.
+            </p>
             <a
-              class="social__link"
-              :href="network.linkedin"
+              class="text-sm font-bold hover:text-blue-600"
+              href="mailto:nissobmx@gmail.com"
               target="_blank"
             >
-              <img src="~/assets/img/social/linkedin.png" alt="Linkedin" />
+              MANDE-ME UM EMAIL
             </a>
-            <a
-              class="social__link"
-              :href="network.instagram"
-              target="_blank"
-            >
-              <img src="~/assets/img/social/instagram.png" alt="Instagram" />
-            </a>
-            <a
-              class="social__link"
-              :href="network.github"
-              target="_blank"
-            >
-              <img src="~/assets/img/social/github.png" alt="Github" />
-            </a>
-            <a
-              class="social__link"
-              :href="network.soundcloud"
-              target="_blank"
-            >
-              <img src="~/assets/img/social/soundcloud.png" alt="SoundCloud" />
-            </a>
-          </nav>
-        </div>
-        <div class="lg:ml-10 mt-5 lg:mt-0">
-          <p class="text-2xl max-w-xl mx-auto">
-            Eu sou Anilson Lopes, <a :href="network.linkedin" class="network__link" target="_blank" title="Perfil no Linkedin">desenvolvedor web</a> que atualmente está criando interfaces 
-            digitais na <a :href="network.doity" class="network__link" target="_blank" title="Site da Doity, plataforma de eventos">Doity</a>. 
-            <a :href="network.instagram" class="network__link" target="_blank" title="Perfil no Instagram">Vivo na sombra</a> do desenvolvimento performático e gosto de colaborar com 
-            equipes que eliminam as fronteiras entre eles. Eu acredito na <a :href="network.github" class="network__link" target="_blank" title="Perfil no Github">construção</a> de 
-            produtos auto-sustentáveis, escaláveis e acessíveis.
-          </p>
-          <p class="text-xl mt-5 mb-4 max-w-xl mx-auto">
-            Na eminência de tempo livre me envolvo com <a :href="network.soundcloud" class="network__link" target="_blank" title="Perfil no Soundcloud">produção musical</a>, tento reinventar coisas e pratico bmx street-park.
-          </p>
-          <a
-            class="text-sm font-bold hover:text-blue-600"
-            href="mailto:nissobmx@gmail.com"
-            target="_blank"
-          >
-            MANDE-ME UM EMAIL
-          </a>
+          </div>
         </div>
       </div>
     </div>
@@ -65,8 +67,14 @@
 </template>
 
 <style lang="postcss" scoped>
+@screen lg {
+  .wrapper {
+    @apply items-center;
+  }
+}
+
 .wrapper {
-  @apply min-h-screen w-full flex flex-col justify-center items-center p-4;
+  @apply min-h-screen w-full justify-center flex flex-col p-4;
   background-color: var(--theme-bg, #f1f3f2);
   color: var(--theme-text, #f1f3f2);
 }
@@ -92,7 +100,7 @@ body:not(.dark-mode) .toggle-dark-mode:hover {
 }
 
 .toggle-dark-mode {
-  @apply p-2;
+  @apply p-2 text-left;
   transition: 200ms all;
 }
 
