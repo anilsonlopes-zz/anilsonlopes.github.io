@@ -13,6 +13,11 @@ export default {
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       {
+        hid: 'google-site-verification',
+        name: 'google-site-verification',
+        content: 'qjGjMQeTuM7JUOc0izOv3lkp_xyNTPnEYA37wDdupDI'
+      },
+      {
         hid: 'description',
         name: 'description',
         content:
