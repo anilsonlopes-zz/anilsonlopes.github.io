@@ -7,7 +7,8 @@ export default {
     htmlAttrs: {
       lang: 'pt-br'
     },
-    title: process.env.npm_package_name || '',
+    title: 'quila',
+    titleTemplate: '%s - quila.dev',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },

@@ -76,6 +76,7 @@
 .wrapper {
   @apply min-h-screen w-full flex flex-col justify-center items-center p-4;
   background-color: var(--theme-bg, #f1f3f2);
+  color: var(--theme-text, #f1f3f2);
 }
 
 .toggle-dark-mode:focus {
@@ -148,7 +149,7 @@
 export default {
   head() {
     return {
-      title: 'home',
+      title: 'Anilson Lopes',
       meta: [
         {
           hid: 'og:title',
