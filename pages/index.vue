@@ -1,6 +1,10 @@
 <template>
   <div>
     <div class="wrapper">
+      <button class="toggle-dark-mode" @click="darkMode = !darkMode">
+        <i v-if="darkMode" class="sun inline-block"></i>
+        <i v-else class="moon inline-block"></i>
+      </button>
       <div class="max-w-4xl flex flex-col lg:flex-row lg:justify-between">
         <div class="flex flex-col justify-center">
           <div
@@ -71,31 +75,54 @@
 <style lang="postcss" scoped>
 .wrapper {
   @apply min-h-screen w-full flex flex-col justify-center items-center p-4;
-  background-image: linear-gradient(
-    to left bottom,
-    #cccccc,
-    #fbfbfb,
-    #f6f6f6,
-    #f2f2f2,
-    #eeeeee
-  );
+  background-color: var(--theme-bg, #f1f3f2);
 }
 
-.highlight-text {
-  font-family: 'Palanquin Dark', cursive;
-  background-clip: text;
-  background-attachment: local;
-  background-size: 100% auto;
-  -webkit-text-fill-color: transparent;
-  background-image: url(~assets/img/02.jpg);
+.toggle-dark-mode:focus {
+  @apply outline-none;
+}
+
+.toggle-dark-mode {
+  @apply p-2;
+}
+
+.moon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  box-shadow: 15px 15px 0 0 var(--theme-text, red);
+  transform: translate3d(-25%, -25%, 0);
+}
+
+.sun {
+  background-color: var(--theme-text, red);
+  width: 80px;
+  height: 80px;
+  position: relative;
+  text-align: center;
+}
+
+.sun:before,
+.sun:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: inherit;
+  height: inherit;
+  background-color: inherit;
+}
+
+.sun:before {
+  transform: rotate(30deg);
+}
+
+.sun:after {
+  transform: rotate(60deg);
 }
 
 .social {
   @apply flex mt-5;
-}
-
-.social:hover .social__link {
-  @apply text-blue-300;
 }
 
 .social__link {
@@ -108,7 +135,8 @@
 }
 
 .network__link {
-  @apply text-black border-b border-blue-300;
+  @apply border-b border-blue-300;
+  color: var(--theme-text);
 }
 
 .network__link:hover {
@@ -118,7 +146,42 @@
 
 <script>
 export default {
+  head() {
+    return {
+      title: 'home',
+      meta: [
+        {
+          hid: 'og:title',
+          property: 'og:title',
+          content: 'Anilson Lopes, desenvolvedor web'
+        },
+        {
+        hid: 'description',
+          name: 'description',
+          content:
+            'Anilson Lopes, desenvolvedor web. JavaScript, CSS, HTML, VueJS, NuxtJS'
+        },
+        {
+          hid: 'og:description',
+          property: 'og:description',
+          content:
+            'Anilson Lopes, desenvolvedor web. JavaScript, CSS, HTML, VueJS, NuxtJS'
+        },
+        {
+          hid: 'og:url',
+          property: 'og:url',
+          content: 'https://www.quila.dev'
+        },
+        {
+          hid: 'og:image',
+          property: 'og:image',
+          content: 'https://quila.dev/images/skull_0.png'
+        }
+      ]
+    }
+  },
   data: () => ({
+    darkMode: false,
     network: {
       instagram: 'https://www.instagram.com/quilamcz',
       linkedin: 'https://www.linkedin.com/in/anilson-lopes-07a36612a',
@@ -126,6 +189,11 @@ export default {
       soundcloud: 'https://soundcloud.com/quilamcz',
       doity: 'https://doity.com.br/eventos'
     }
-  })
+  }),
+  watch: {
+    darkMode(dark) {
+      document.body.classList[dark ? 'add' : 'remove']('dark-mode')
+    }
+  }
 }
 </script>
