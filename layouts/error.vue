@@ -28,11 +28,11 @@ export default {
 
 <style lang="postcss" scoped>
 .error {
-  @apply w-full max-w-xl mx-auto;
+  @apply w-full h-screen bg-black text-white;
 }
 
 .error__inner {
-  @apply w-full h-full flex flex-col justify-center items-center;
+  @apply max-w-xl mx-auto w-full flex flex-col justify-center items-center;
 }
 
 .error__heading {

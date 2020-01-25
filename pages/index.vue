@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="wrapper">
-      <div class="max-w-4xl flex flex-col md:flex-row items-center justify-between mt-10">
+      <div class="max-w-4xl flex flex-col lg:flex-row lg:justify-between">
         <div class="flex flex-col justify-center">
           <div
             class="bg-cover rounded shadow-lg"
@@ -12,47 +12,47 @@
               height: '220px'
             }"
           />
-          <nav class="flex justify-center mt-5">
+          <nav class="social">
             <a
               class="social__link"
-              href="https://www.linkedin.com/in/anilson-lopes-07a36612a"
+              :href="network.linkedin"
               target="_blank"
             >
               <img src="~/assets/img/social/linkedin.png" alt="Linkedin" />
             </a>
             <a
               class="social__link"
-              href="https://www.instagram.com/quilamcz"
+              :href="network.instagram"
               target="_blank"
             >
               <img src="~/assets/img/social/instagram.png" alt="Instagram" />
             </a>
             <a
               class="social__link"
-              href="https://github.com/anilsonlopes"
+              :href="network.github"
               target="_blank"
             >
               <img src="~/assets/img/social/github.png" alt="Github" />
             </a>
             <a
               class="social__link"
-              href="https://soundcloud.com/quilamcz"
+              :href="network.soundcloud"
               target="_blank"
             >
               <img src="~/assets/img/social/soundcloud.png" alt="SoundCloud" />
             </a>
           </nav>
         </div>
-        <div class="md:ml-10 mt-10 md:mt-0">
-          <p class="text-2xl">
-            Eu sou Anilson Lopes, desenvolvedor front-end que atualmente está criando interfaces 
-            digitais na <a href="https://doity.com.br/?utm_source=quila.dev" target="_blank">Doity</a>. 
-            Vivo na sombra do desenvolvimento performático e gosto de colaborar com 
-            equipes que eliminam as fronteiras entre eles. Eu acredito na construção de 
+        <div class="lg:ml-10 mt-5 lg:mt-0">
+          <p class="text-2xl max-w-xl mx-auto">
+            Eu sou Anilson Lopes, <a :href="network.linkedin" class="network__link" target="_blank" title="Perfil no Linkedin">desenvolvedor web</a> que atualmente está criando interfaces 
+            digitais na <a :href="network.doity" class="network__link" target="_blank" title="Site da Doity, plataforma de eventos">Doity</a>. 
+            <a :href="network.instagram" class="network__link" target="_blank" title="Perfil no Instagram">Vivo na sombra</a> do desenvolvimento performático e gosto de colaborar com 
+            equipes que eliminam as fronteiras entre eles. Eu acredito na <a :href="network.github" class="network__link" target="_blank" title="Perfil no Github">construção</a> de 
             produtos auto-sustentáveis, escaláveis e acessíveis.
           </p>
-          <p class="text-xl mt-5 mb-4">
-            Na eminência de tempo livre me envolvo com produção musical, tento reinventar coisas e pratico bmx street-park.
+          <p class="text-xl mt-5 mb-4 max-w-xl mx-auto">
+            Na eminência de tempo livre me envolvo com <a :href="network.soundcloud" class="network__link" target="_blank" title="Perfil no Soundcloud">produção musical</a>, tento reinventar coisas e pratico bmx street-park.
           </p>
           <a
             class="text-sm font-bold hover:text-blue-600"
@@ -70,7 +70,7 @@
 
 <style lang="postcss" scoped>
 .wrapper {
-  @apply h-screen w-full flex flex-col justify-center items-center p-4;
+  @apply min-h-screen w-full flex flex-col justify-center items-center p-4;
   background-image: linear-gradient(
     to left bottom,
     #cccccc,
@@ -90,12 +90,42 @@
   background-image: url(~assets/img/02.jpg);
 }
 
+.social {
+  @apply flex mt-5;
+}
+
+.social:hover .social__link {
+  @apply text-blue-300;
+}
+
 .social__link {
-  @apply mx-2 opacity-50;
-  transition: 100ms all;
+  @apply mx-2 opacity-25;
+  transition: 600ms all;
 }
 
 .social__link:hover {
   @apply opacity-100;
 }
+
+.network__link {
+  @apply text-black border-b border-blue-300;
+}
+
+.network__link:hover {
+  @apply bg-blue-300;
+}
 </style>
+
+<script>
+export default {
+  data: () => ({
+    network: {
+      instagram: 'https://www.instagram.com/quilamcz',
+      linkedin: 'https://www.linkedin.com/in/anilson-lopes-07a36612a',
+      github: 'https://github.com/anilsonlopes',
+      soundcloud: 'https://soundcloud.com/quilamcz',
+      doity: 'https://doity.com.br/?utm_source=quila.dev'
+    }
+  })
+}
+</script>
