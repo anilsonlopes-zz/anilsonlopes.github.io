@@ -58,7 +58,7 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [],
+  plugins: ['~/plugins/ga.js'],
   /*
    ** Nuxt.js modules
    */
