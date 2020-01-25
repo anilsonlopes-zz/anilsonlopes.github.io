@@ -124,7 +124,7 @@ export default {
       linkedin: 'https://www.linkedin.com/in/anilson-lopes-07a36612a',
       github: 'https://github.com/anilsonlopes',
       soundcloud: 'https://soundcloud.com/quilamcz',
-      doity: 'https://doity.com.br/?utm_source=quila.dev'
+      doity: 'https://doity.com.br/eventos'
     }
   })
 }
