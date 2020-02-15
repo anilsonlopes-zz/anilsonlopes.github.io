@@ -174,40 +174,6 @@ body.dark-mode .social__link {
 
 <script>
 export default {
-  head() {
-    return {
-      title: 'Anilson Lopes',
-      meta: [
-        {
-          hid: 'og:title',
-          property: 'og:title',
-          content: 'Anilson Lopes, desenvolvedor web'
-        },
-        {
-        hid: 'description',
-          name: 'description',
-          content:
-            'Anilson Lopes, desenvolvedor web. JavaScript, CSS, HTML, VueJS, NuxtJS'
-        },
-        {
-          hid: 'og:description',
-          property: 'og:description',
-          content:
-            'Anilson Lopes, desenvolvedor web. JavaScript, CSS, HTML, VueJS, NuxtJS'
-        },
-        {
-          hid: 'og:url',
-          property: 'og:url',
-          content: 'https://www.quila.dev'
-        },
-        {
-          hid: 'og:image',
-          property: 'og:image',
-          content: 'https://quila.dev/images/skull_0.png'
-        }
-      ]
-    }
-  },
   data: () => ({
     darkMode: false,
     network: {

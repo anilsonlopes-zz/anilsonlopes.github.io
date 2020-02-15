@@ -7,7 +7,7 @@ export default {
     htmlAttrs: {
       lang: 'pt-br'
     },
-    title: 'quila',
+    title: '{ quila: "Anilson Lopes" }',
     titleTemplate: '%s - quila.dev',
     meta: [
       { charset: 'utf-8' },
