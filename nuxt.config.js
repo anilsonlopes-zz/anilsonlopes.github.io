@@ -12,6 +12,7 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { rel: 'preconnect', href: 'https://www.google-analytics.com' },
       {
         hid: 'google-site-verification',
         name: 'google-site-verification',
