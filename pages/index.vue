@@ -14,6 +14,7 @@
                 class="social__link"
                 :href="network.linkedin"
                 target="_blank"
+                rel="noreferrer"
               >
                 <img src="~/assets/img/social/linkedin.png" alt="Linkedin" />
               </a>
@@ -21,6 +22,7 @@
                 class="social__link"
                 :href="network.instagram"
                 target="_blank"
+                rel="noreferrer"
               >
                 <img src="~/assets/img/social/instagram.png" alt="Instagram" />
               </a>
@@ -28,6 +30,7 @@
                 class="social__link"
                 :href="network.github"
                 target="_blank"
+                rel="noreferrer"
               >
                 <img src="~/assets/img/social/github.png" alt="Github" />
               </a>
@@ -35,6 +38,7 @@
                 class="social__link"
                 :href="network.soundcloud"
                 target="_blank"
+                rel="noreferrer"
               >
                 <img src="~/assets/img/social/soundcloud.png" alt="SoundCloud" />
               </a>
