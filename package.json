@@ -11,7 +11,7 @@
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
-    "up": "yarn generate && yarn deploy && echo quila.dev > ./dist/CNAME",
+    "up": "yarn generate && echo quila.dev > ./dist/CNAME && yarn deploy",
     "deploy": "push-dir --dir=dist --branch=master --cleanup"
   },
   "dependencies": {
