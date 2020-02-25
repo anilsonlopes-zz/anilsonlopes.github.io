@@ -28,7 +28,7 @@ export default {
       {
         hid: 'og:image',
         property: 'og:image',
-        content: 'https://quila.dev/images/skull_0.png'
+        content: 'https://quila.dev/og-image.jpg'
       },
       {
         hid: 'og:description',
