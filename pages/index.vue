@@ -2,9 +2,37 @@
   <div>
     <div class="wrapper">
       <div class="max-w-xl lg:max-w-4xl mx-auto">
-        <button class="toggle-dark-mode" :title="darkMode ? 'Desativar modo escuro' : 'Ativar modo escuro'" @click="darkMode = !darkMode">
-          <i v-if="darkMode" class="sun inline-block"></i>
-          <i v-else class="moon inline-block"></i>
+        <button class="bg-transparent border-none focus:outline-none focus:shadow-outline hover:shadow-outline" :title="darkMode ? 'Desativar modo escuro' : 'Ativar modo escuro'" @click="darkMode = !darkMode">
+          <svg
+            v-if="darkMode"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            aria-hidden="true"
+            role="img"
+            class="w-10 h-10 text-white"
+            preserveAspectRatio="xMidYMid meet"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M7.5 2c-1.79 1.15-3 3.18-3 5.5s1.21 4.35 3.03 5.5C4.46 13 2 10.54 2 7.5A5.5 5.5 0 0 1 7.5 2m11.57 1.5l1.43 1.43L4.93 20.5L3.5 19.07L19.07 3.5m-6.18 2.43L11.41 5L9.97 6l.42-1.7L9 3.24l1.75-.12l.58-1.65L12 3.1l1.73.03l-1.35 1.13l.51 1.67m-3.3 3.61l-1.16-.73l-1.12.78l.34-1.32l-1.09-.83l1.36-.09l.45-1.29l.51 1.27l1.36.03l-1.05.87l.4 1.31M19 13.5a5.5 5.5 0 0 1-5.5 5.5c-1.22 0-2.35-.4-3.26-1.07l7.69-7.69c.67.91 1.07 2.04 1.07 3.26m-4.4 6.58l2.77-1.15l-.24 3.35l-2.53-2.2m4.33-2.7l1.15-2.77l2.2 2.54l-3.35.23m1.15-4.96l-1.14-2.78l3.34.24l-2.2 2.54M9.63 18.93l2.77 1.15l-2.53 2.19l-.24-3.34z"
+              fill="currentColor"
+            ></path>
+          </svg>
+          <svg
+            v-else
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            aria-hidden="true"
+            role="img"
+            class="w-10 h-10 text-black"
+            preserveAspectRatio="xMidYMid meet"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M7.5 2c-1.79 1.15-3 3.18-3 5.5s1.21 4.35 3.03 5.5C4.46 13 2 10.54 2 7.5A5.5 5.5 0 0 1 7.5 2m11.57 1.5l1.43 1.43L4.93 20.5L3.5 19.07L19.07 3.5m-6.18 2.43L11.41 5L9.97 6l.42-1.7L9 3.24l1.75-.12l.58-1.65L12 3.1l1.73.03l-1.35 1.13l.51 1.67m-3.3 3.61l-1.16-.73l-1.12.78l.34-1.32l-1.09-.83l1.36-.09l.45-1.29l.51 1.27l1.36.03l-1.05.87l.4 1.31M19 13.5a5.5 5.5 0 0 1-5.5 5.5c-1.22 0-2.35-.4-3.26-1.07l7.69-7.69c.67.91 1.07 2.04 1.07 3.26m-4.4 6.58l2.77-1.15l-.24 3.35l-2.53-2.2m4.33-2.7l1.15-2.77l2.2 2.54l-3.35.23m1.15-4.96l-1.14-2.78l3.34.24l-2.2 2.54M9.63 18.93l2.77 1.15l-2.53 2.19l-.24-3.34z"
+              fill="currentColor"
+            ></path>
+          </svg>
         </button>
         <div class="pt-10 lg:pt-20 flex flex-col lg:flex-row lg:justify-between">
           <div class="flex flex-col justify-center">
@@ -95,65 +123,21 @@ body.dark-mode .avatar {
   background-image: url(~assets/img/mr-robot.gif);
 }
 
-.toggle-dark-mode:focus {
-  @apply outline-none ;
-}
-
-body:not(.dark-mode) .toggle-dark-mode:hover {
-  background-color: var(--theme-link-hover, #00354e);
-}
-
-.toggle-dark-mode {
-  @apply p-2 text-left;
-  transition: 200ms all;
-}
-
 .moon {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  box-shadow: 15px 15px 0 0 var(--theme-text, red);
-  transform: translate3d(-25%, -25%, 0);
-}
-
-.sun {
-  background-color: yellow;
-  opacity: 0.7;
-  width: 80px;
-  height: 80px;
-  position: relative;
-  text-align: center;
-}
-
-.sun:before,
-.sun:after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: inherit;
-  height: inherit;
-  background-color: inherit;
-}
-
-.sun:before {
-  transform: rotate(30deg);
-}
-
-.sun:after {
-  transform: rotate(60deg);
+  transform: rotateZ(90deg);
 }
 
 .social {
-  @apply flex mt-5;
+  @apply flex justify-center mt-5;
 }
 
 .social__link {
   @apply mx-2 opacity-25;
-  transition: 600ms all;
+  transition: 200ms all;
 }
 
-.social__link:hover {
+.social__link:hover,
+.social__link:focus {
   @apply opacity-100;
 }
 

@@ -1,5 +1,5 @@
 :root {
-  --theme-bg: white;
+  --theme-bg: rgb(235, 235, 235);
   --theme-text: black;
 
   --theme-link: #00354e;
@@ -7,7 +7,7 @@
 }
 
 body.dark-mode {
-  --theme-bg: black;
+  --theme-bg: rgb(32, 30, 34);
   --theme-text: rgb(152, 152, 167);
 
   --theme-link: #81cbee;
