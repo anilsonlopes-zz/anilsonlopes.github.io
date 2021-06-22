@@ -175,7 +175,7 @@ body.dark-mode .social__link {
 <script>
 export default {
   data: () => ({
-    darkMode: false,
+    darkMode: ['true', null].includes(window.localStorage.getItem('dark-mode')),
     network: {
       instagram: 'https://www.instagram.com/quilamcz',
       linkedin: 'https://www.linkedin.com/in/anilson-lopes-07a36612a',
@@ -185,13 +185,13 @@ export default {
     }
   }),
   watch: {
-    darkMode(dark) {
-      document.body.classList[dark ? 'add' : 'remove']('dark-mode')
-      window.localStorage.setItem('dark-mode', dark)
+    darkMode: {
+      immediate: true,
+      handler(dark) {
+        document.body.classList[dark ? 'add' : 'remove']('dark-mode')
+        window.localStorage.setItem('dark-mode', dark)
+      }
     }
   },
-  mounted() {
-    this.darkMode = JSON.parse(window.localStorage.getItem('dark-mode')) || false
-  }
 }
 </script>
