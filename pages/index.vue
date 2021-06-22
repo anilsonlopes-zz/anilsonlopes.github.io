@@ -52,7 +52,7 @@
               equipes que eliminam as fronteiras entre eles. Eu acredito na <a :href="network.github" rel="noreferrer" class="network__link" target="_blank" title="Perfil no Github">construção</a> de 
               produtos auto-sustentáveis, escaláveis e acessíveis.
             </p>
-            <p class="text-xl pb-5 pb-4">
+            <p class="text-xl pb-4">
               Na eminência de tempo livre me envolvo com <a :href="network.soundcloud" rel="noreferrer" class="network__link" target="_blank" title="Perfil no Soundcloud">produção musical</a>, tento reinventar coisas e pratico bmx street-park.
             </p>
             <a
@@ -84,7 +84,7 @@
 }
 
 .avatar {
-  @apply bg-cover rounded shadow-lg w-64 h-64 bg-cover;
+  @apply bg-cover rounded shadow-lg w-64 h-64;
 }
 
 body:not(.dark-mode) .avatar {
