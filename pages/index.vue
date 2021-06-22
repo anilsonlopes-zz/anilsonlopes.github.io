@@ -75,7 +75,7 @@
           <div class="lg:pl-10 pt-5 lg:pt-0">
             <p class="text-2xl">
               Eu sou Anilson Lopes, <a :href="network.linkedin" rel="noreferrer" class="network__link" target="_blank" title="Perfil no Linkedin">desenvolvedor web</a> que atualmente está criando interfaces 
-              digitais na <a :href="network.doity" rel="noreferrer" class="network__link" target="_blank" title="Site da Doity, plataforma de eventos">Doity</a>. 
+              digitais no <a :href="network.asc" rel="noreferrer" class="network__link" target="_blank" title="Site do Acesse seu condomínio">Acesse seu condomínio</a>. 
               <a :href="network.instagram" rel="noreferrer" class="network__link" target="_blank" title="Perfil no Instagram">Vivo na sombra</a> do desenvolvimento performático e gosto de colaborar com 
               equipes que eliminam as fronteiras entre eles. Eu acredito na <a :href="network.github" rel="noreferrer" class="network__link" target="_blank" title="Perfil no Github">construção</a> de 
               produtos auto-sustentáveis, escaláveis e acessíveis.
@@ -165,8 +165,15 @@ export default {
       linkedin: 'https://www.linkedin.com/in/anilson-lopes-07a36612a',
       github: 'https://github.com/anilsonlopes',
       soundcloud: 'https://soundcloud.com/quilamcz',
-      doity: 'https://doity.com.br/eventos'
-    }
+      asc: 'https://acesseseucondominio.com.br'
+    },
+    onmouse: {
+      instagram: false,
+      linkedin: false,
+      github: false,
+      soundcloud: false,
+      asc: false,
+    },
   }),
   watch: {
     darkMode: {
