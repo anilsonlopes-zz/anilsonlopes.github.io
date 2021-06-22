@@ -11,5 +11,9 @@ body.dark-mode {
   --theme-text: rgb(152, 152, 167);
 
   --theme-link: #81cbee;
-  --theme-link-hover: #00354e;
+  --theme-link-hover: #0070a8;
+}
+
+html, body {
+  font-family: 'Roboto', sans-serif;
 }
